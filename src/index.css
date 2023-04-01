@@ -69,6 +69,7 @@ textarea:focus {
 .save:hover {
 	background-color: #ededed;
 	cursor: pointer;
+  transform: scale(1.1);
 }
 
 .note {
@@ -92,6 +93,12 @@ textarea:focus {
 	cursor: pointer;
 }
 
+.delete-icon:hover{
+  transform:scale(1.5);
+  background-color: #fff;
+ 
+}
+
 .search {
 	display: flex;
 	align-items: center;
@@ -109,6 +116,9 @@ textarea:focus {
 
 .search input:focus {
 	outline: none;
+}
+.search-icons{
+  margin: 8px 15px;
 }
 
 
