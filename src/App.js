@@ -5,55 +5,24 @@ import Search from "./Components/Search";
 import Header from "./Components/Header";
 
 const App = () => {
-  const [notes, setnotes] = useState([
-    {
-      id: nanoid(),
-      text: "This is my first Note",
-      date: "01/04/2023",
-    },
-
-    {
-      id: nanoid(),
-      text: "This is my first Note",
-      date: "01/04/2023",
-    },
-
-    {
-      id: nanoid(),
-      text: "This is my 2 Note",
-      date: "01/04/2023",
-    },
-
-    {
-      id: nanoid(),
-      text: "This is my 3 Note",
-      date: "01/04/2023",
-    },
-
-    {
-      id: nanoid(),
-      text: "This is my 4 Note",
-      date: "01/04/2023",
-    },
-
-    {
-      id: nanoid(),
-      text: "This is my 5 Note",
-      date: "01/04/2023",
-    },
-  ]);
+  const [notes, setnotes] = useState(
+    JSON.parse(
+      localStorage.getItem('Notes-App-React')
+      )||[]
+  );
 
   const [SearchNote, setSearchNote] = useState("");
   const [darkMode, setdarkMode] = useState(false);
 
-  useEffect(()=>{
-    const savedNotes = JSON.parse(
-      localStorage.getItem('Notes-App-React')
-      );
-      if(savedNotes){
-          setnotes(savedNotes)
-    }
-  },[]);
+  // useEffect(()=>{
+  //   const savedNotes = JSON.parse(
+  //     localStorage.getItem('Notes-App-React')
+  //     );
+  //     if(savedNotes){
+  //         setnotes(savedNotes)
+  //   }
+  // },[]);
+
 
   useEffect(()=>{
       localStorage.setItem('Notes-App-React', JSON.stringify(notes))
