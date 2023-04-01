@@ -53,11 +53,11 @@ const App = () => {
       if(savedNotes){
           setnotes(savedNotes)
     }
-  },[])
+  },[]);
 
   useEffect(()=>{
-      localStorage.setItem('Notes-App-React',JSON.stringify(notes))
-  },[notes])
+      localStorage.setItem('Notes-App-React', JSON.stringify(notes))
+  },[notes]);
 
   const addNote = (text) => {
     const date = new Date();
