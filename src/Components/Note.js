@@ -3,13 +3,13 @@
 
 
 
-const Note = ({id,text,date}) => {
+const Note = ({id,text,date,handleDeleteNote}) => {
   return (
     <div className='note' key={id}>
         <span>{text}</span>
         <div className='note-footer'>
                 <small>{date}</small>
-               <i className="fa-solid fa-trash-can"></i>
+               <i className="fa-solid fa-trash-can" onClick = { ()=>handleDeleteNote(id)}></i>
         </div>
 
     </div>
